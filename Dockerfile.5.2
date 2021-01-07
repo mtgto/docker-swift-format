@@ -1,12 +1,12 @@
-FROM swift:5.3-focal
+FROM swift:5.2-focal
 
 WORKDIR /swift-format
 RUN apt-get update
 RUN apt-get install wget
-RUN wget -q -O - https://github.com/apple/swift-format/archive/swift-5.3.2-RELEASE.tar.gz | tar zxf - --strip-components 1
+RUN wget -q -O - https://github.com/apple/swift-format/archive/0.50200.1.tar.gz | tar zxf - --strip-components 1
 RUN swift build --configuration release
 
-FROM swift:5.3-focal-slim
+FROM swift:5.2-focal-slim
 RUN apt-get update && \
 apt-get install libz3-4 && \
 apt-get clean && \

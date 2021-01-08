@@ -6,7 +6,7 @@ RUN env DEBIAN_FRONTEND=noninteractive apt-get install wget
 RUN wget -q -O - https://github.com/apple/swift-format/archive/0.50300.0.tar.gz | tar zxf - --strip-components 1
 RUN swift build --configuration release
 
-FROM swift:5.3-focal
+FROM swift:5.3-focal-slim
 RUN env DEBIAN_FRONTEND=noninteractive apt-get update && \
 env DEBIAN_FRONTEND=noninteractive apt-get install libz3-4 && \
 env DEBIAN_FRONTEND=noninteractive apt-get clean && \

@@ -28,6 +28,5 @@ $ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.6 for
 ### Build
 
 ```console
-docker buildx build --platform linux/arm64/v8 --build-arg BUILD_DIR=aarch64-unknown-linux-gnu -t mtgto/swift-format:latest .
-docker buildx build --platform linux/amd64 --build-arg BUILD_DIR=x86_64-unknown-linux-gnu -t mtgto/swift-format:latest .
+docker buildx build --platform linux/arm64/v8,linux/amd64 -t mtgto/swift-format:latest --push .
 ```

@@ -1,6 +1,7 @@
 docker-swift-format
 ====
 [![Docker Hub](https://img.shields.io/docker/cloud/build/mtgto/swift-format)](https://hub.docker.com/r/mtgto/swift-format/)
+![swift-format v5.7](https://img.shields.io/docker/v/mtgto/swift-format/5.7)
 ![swift-format v5.6](https://img.shields.io/docker/v/mtgto/swift-format/5.6)
 ![swift-format v5.5](https://img.shields.io/docker/v/mtgto/swift-format/5.5)
 ![swift-format v5.4](https://img.shields.io/docker/v/mtgto/swift-format/5.4)
@@ -14,19 +15,19 @@ Unofficial docker image of [apple/swift-format](https://github.com/apple/swift-f
 ### Lint
 
 ```console
-$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.6 lint --recursive .
+$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.7 lint --recursive .
 ```
 
 ### Format
 
 ```console
-$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.6 format --in-place --recursive .
+$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.7 format --in-place --recursive .
 ```
 
 ## Development
 
-### Build
+### Build & Push
 
 ```console
-docker buildx build --platform linux/arm64/v8,linux/amd64 -t mtgto/swift-format:latest --push .
+docker buildx build --platform linux/arm64/v8,linux/amd64 -t mtgto/swift-format:latest -t mtgto/swift-format:5.7 --push .
 ```

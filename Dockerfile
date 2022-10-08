@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM swift:5.7-focal
+FROM --platform=$BUILDPLATFORM swift:5.7-jammy
 
 WORKDIR /swift-format
 RUN env DEBIAN_FRONTEND=noninteractive apt-get update
@@ -6,6 +6,6 @@ RUN env DEBIAN_FRONTEND=noninteractive apt-get install wget
 RUN wget -q -O - https://github.com/apple/swift-format/archive/0.50700.0.tar.gz | tar zxf - --strip-components 1
 RUN swift build --configuration release
 
-FROM --platform=$BUILDPLATFORM swift:5.7-focal-slim
+FROM --platform=$BUILDPLATFORM swift:5.7-jammy-slim
 COPY --from=0 /swift-format/.build/*/release/swift-format /usr/bin
 ENTRYPOINT ["/usr/bin/swift-format"]

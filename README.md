@@ -1,6 +1,7 @@
 docker-swift-format
 ====
-[![Docker Hub](https://img.shields.io/docker/cloud/build/mtgto/swift-format)](https://hub.docker.com/r/mtgto/swift-format/)
+[![Docker Hub](https://img.shields.io/docker/v/mtgto/swift-format/latest)](https://hub.docker.com/r/mtgto/swift-format/)
+![swift-format v5.8](https://img.shields.io/docker/v/mtgto/swift-format/5.8)
 ![swift-format v5.7](https://img.shields.io/docker/v/mtgto/swift-format/5.7)
 ![swift-format v5.6](https://img.shields.io/docker/v/mtgto/swift-format/5.6)
 ![swift-format v5.5](https://img.shields.io/docker/v/mtgto/swift-format/5.5)

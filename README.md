@@ -15,7 +15,7 @@ $ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.8 lin
 ### Format
 
 ```console
-$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.8 format --in-place --recursive .
+$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.9 format --in-place --recursive .
 ```
 
 ## Development

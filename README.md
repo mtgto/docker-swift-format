@@ -9,13 +9,13 @@ Unofficial docker image of [apple/swift-format](https://github.com/apple/swift-f
 ### Lint
 
 ```console
-$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.9 lint --recursive .
+$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.10 lint --recursive .
 ```
 
 ### Format
 
 ```console
-$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.9 format --in-place --recursive .
+$ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.10 format --in-place --recursive .
 ```
 
 ## Development
@@ -23,5 +23,5 @@ $ docker run --rm --workdir=/work --volume=$PWD:/work mtgto/swift-format:5.9 for
 ### Build & Push
 
 ```console
-docker buildx build --platform linux/arm64/v8,linux/amd64 -t mtgto/swift-format:latest -t mtgto/swift-format:5.9 --push .
+docker buildx build --platform linux/arm64/v8,linux/amd64 -t mtgto/swift-format:latest -t mtgto/swift-format:5.10 --push .
 ```

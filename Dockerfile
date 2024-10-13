@@ -1,11 +1,12 @@
-FROM --platform=$BUILDPLATFORM swift:6.0-jammy
+FROM --platform=$BUILDPLATFORM swift:6.0-noble
 
+ARG VERSION=600.0.0
 WORKDIR /swift-format
-RUN env DEBIAN_FRONTEND=noninteractive apt-get update
-RUN env DEBIAN_FRONTEND=noninteractive apt-get install wget
-RUN wget --quiet --output-document=- https://github.com/apple/swift-format/archive/600.0.0.tar.gz | tar zxf - --strip-components 1
-RUN swift build --product swift-format --configuration release -Xswiftc -static-stdlib
+ADD https://github.com/swiftlang/swift-format/archive/${VERSION}.tar.gz /swift-format/
+RUN tar zxf ${VERSION}.tar.gz --strip-components 1
+RUN swift build --product swift-format --configuration release --static-swift-stdlib
 
-FROM --platform=$BUILDPLATFORM ubuntu:jammy
-COPY --from=0 /swift-format/.build/*/release/swift-format /usr/bin
+FROM --platform=$BUILDPLATFORM ubuntu:noble
+COPY --from=0 /swift-format/.build/release/swift-format /usr/bin
+COPY --from=0 /swift-format/LICENSE.txt /etc/LICENSE.txt
 ENTRYPOINT ["/usr/bin/swift-format"]

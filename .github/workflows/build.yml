@@ -32,5 +32,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: mtgto/swift-format:latest,mtgto/swift-format:6.0
+          tags: mtgto/swift-format:latest,mtgto/swift-format:6.1
           platforms: linux/amd64,linux/arm64/v8

@@ -43,6 +43,8 @@ jobs:
           tags: |
             mtgto/swift-format:latest
             mtgto/swift-format:6.2
+            ghcr.io/mtgto/swift-format:latest
+            ghcr.io/mtgto/swift-format:6.2
           platforms: |
             linux/amd64
             linux/arm64/v8

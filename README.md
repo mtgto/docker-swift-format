@@ -7,7 +7,7 @@ Unofficial docker image of [apple/swift-format](https://github.com/apple/swift-f
 
 ## Usage
 
-You can use `mtgto/swift-format:6.2` (Docker Hub) or `ghcr.io/mtgto/swift-format:6.2` (GitHub Container Registry).
+You can use `mtgto/swift-format:6.3` (Docker Hub) or `ghcr.io/mtgto/swift-format:6.3` (GitHub Container Registry).
 
 ### Lint
 
@@ -16,7 +16,7 @@ docker run \
   --rm \
   --workdir=/work \
   --volume=$PWD:/work \
-  mtgto/swift-format:6.2 \
+  mtgto/swift-format:6.3 \
   lint --recursive .
 ```
 
@@ -27,7 +27,7 @@ docker run \
   --rm \
   --workdir=/work \
   --volume=$PWD:/work \
-  mtgto/swift-format:6.2 \
+  mtgto/swift-format:6.3 \
   format --in-place --recursive .
 ```
 
@@ -39,7 +39,7 @@ docker run \
 docker buildx build \
   --platform linux/arm64/v8,linux/amd64 \
   -t mtgto/swift-format:latest \
-  -t mtgto/swift-format:6.2 \
+  -t mtgto/swift-format:6.3 \
   --push \
   .
 ```

@@ -1,6 +1,6 @@
-FROM --platform=$BUILDPLATFORM swift:6.3-bookworm AS build
+FROM --platform=$BUILDPLATFORM swift:6.2-bookworm AS build
 
-ARG VERSION=603.0.0
+ARG VERSION=602.0.0
 WORKDIR /swift-format
 ADD https://github.com/swiftlang/swift-format/archive/${VERSION}.tar.gz /swift-format/
 RUN tar zxf ${VERSION}.tar.gz --strip-components 1

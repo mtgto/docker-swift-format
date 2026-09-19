@@ -42,9 +42,9 @@ jobs:
           push: true
           tags: |
             mtgto/swift-format:latest
-            mtgto/swift-format:6.3
+            mtgto/swift-format:6.4
             ghcr.io/mtgto/swift-format:latest
-            ghcr.io/mtgto/swift-format:6.3
+            ghcr.io/mtgto/swift-format:6.4
           platforms: |
             linux/amd64
             linux/arm64/v8

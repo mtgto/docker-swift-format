@@ -4,7 +4,7 @@ ARG VERSION=604.0.0
 WORKDIR /swift-format
 ADD https://github.com/swiftlang/swift-format/archive/${VERSION}.tar.gz /swift-format/
 RUN tar zxf ${VERSION}.tar.gz --strip-components 1
-RUN swift build --product swift-format --configuration release --static-swift-stdlib
+RUN swift build --product swift-format --configuration release --static-swift-stdlib --build-system native
 
 FROM --platform=$BUILDPLATFORM gcr.io/distroless/cc-debian13
 COPY --from=build /swift-format/.build/release/swift-format /usr/bin
